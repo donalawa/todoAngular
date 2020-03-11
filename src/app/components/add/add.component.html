@@ -1,0 +1,22 @@
+<h1 class="h2">Add Todo</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+        <input type="text" required class="form-control" ngModel name="name" #name="ngModel" placeholder="Name">
+        <div *ngIf="name.touched && name.invalid" class="alert alert-danger mt-1">Name is required</div>
+    </div>
+    <div class="form-group">
+        <input type="text" required class="form-control"  ngModel name="activity" #activity="ngModel" placeholder="activity">
+        <div *ngIf="activity.touched && activity.invalid" class="alert alert-danger mt-1">Activity is required</div>
+    </div>
+    <div class="form-group">
+        <input type="text" required class="form-control" ngModel name="state" #state="ngModel" placeholder="State">
+        <div *ngIf="state.touched && state.invalid" class="alert alert-danger mt-1">State is required</div>
+    </div>
+    <div class="form-group">
+        <input type="date" required class="form-control" ngModel name="dateline" #dateline="ngModel" placeholder="Dateline">
+        <div *ngIf="dateline.touched && dateline.invalid" class="alert alert-danger mt-1">Dateline is required</div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="f.invalid" type="submit" class="btn btn-lg btn-block btn-primary">Add Todo</button>
+    </div>
+</form>
